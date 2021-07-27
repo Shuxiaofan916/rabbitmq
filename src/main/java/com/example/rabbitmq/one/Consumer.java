@@ -1,21 +1,20 @@
 package com.example.rabbitmq.one;
 
+import com.example.rabbitmq.rabbitmqUtil.RabbitMqUtil;
 import com.rabbitmq.client.*;
-
-import java.io.IOException;
-import java.util.concurrent.TimeoutException;
 
 //消费者
 public class Consumer {
         //队列名称
         public static final String QUEUE_NAME="hello";
 
-    public static void main(String[] args) throws IOException, TimeoutException {
-        ConnectionFactory factory = new ConnectionFactory();
-        factory.setUsername("guest");
-        factory.setPassword("guest");
-        Connection connection = factory.newConnection();
-        Channel channel = connection.createChannel();
+    public static void main(String[] args) throws Exception {
+        //ConnectionFactory factory = new ConnectionFactory();
+        //factory.setUsername("guest");
+        //factory.setPassword("guest");
+        //Connection connection = factory.newConnection();
+        //Channel channel = connection.createChannel();
+        Channel channel = RabbitMqUtil.getChannel();
 
         //声明 接受消息
         DeliverCallback deliverCallback=(var1,var2) ->{

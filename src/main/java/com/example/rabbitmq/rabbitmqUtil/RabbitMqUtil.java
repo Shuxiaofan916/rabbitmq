@@ -4,7 +4,8 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
-public class rabbitMqUtil {
+//这是一个信道共苦类
+public class RabbitMqUtil {
     public static Channel getChannel() throws Exception{
     //创建一个连接工厂
         ConnectionFactory factory = new ConnectionFactory();
